@@ -1,0 +1,81 @@
+{
+  "title": "app.convert.json schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "type": "object",
+  "properties": {
+    "sourcePath": {
+      "description": "项目源码目录",
+      "type": "string",
+      "default": "src"
+    },
+    "buildPath": {
+      "description": "项目编译目录",
+      "type": "string",
+      "default": "builds"
+    },
+    "ignore": {
+      "description": "遍历文件时要忽略项的文件，如何为字符串将会识别为引入模块",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "enabled": {
+      "description": "启用编译",
+      "type": "boolean",
+      "default": true
+    },
+    "builds": {
+      "description": "编译选项",
+      "type": "array",
+      "items": {
+        "description": "平台环境定义",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "平台环境名,编译后目录的名字",
+            "type": "string"
+          },
+          "enable": {
+            "description": "启用该平台编译",
+            "type": "boolean",
+            "default": true
+          },
+          "exclude": {
+            "description": "平台文件排除器，如果为字体串就是指向一个排除器的模块文件,接口为 module.exports=function(fileName,platform,projectDir,filePath,PATH){return true||false}",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "define": {
+            "description": "条件编译要用到的宏定义",
+            "type": "string"
+          },
+          "defineFor": {
+            "description": "条件编译作用的文件类型,如果为字体串就是指向一个排除器的模块文件,接口为module.exports=function(fileName,platform,projectDir,filePath,PATH){return true||false}",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "replaceFor": {
+            "description": "替换译作用的文件类型,如果为字体串就是指向一个排除器的模块文件,接口为module.exports=function(fileName,platform,projectDir,filePath,PATH){return true||false}",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "replacer": {
+            "description": "文件替换器，如果为字体串就是指向一个替换器的js文件,接口为 module.exports=function(fileName,content,platform,projectDir,filePath,PATH){return {fileName,content}}",
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

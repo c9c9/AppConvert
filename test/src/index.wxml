@@ -1,0 +1,9 @@
+<view bindtap="ssds" wx:if="true"></view>
+
+<!--#IF WX-->
+<view>这是微信</view>
+<!--#ELSE IF ALI-->
+<view>这是阿里</view>
+<!--#ELSE-->
+<view>这是其他的</view>
+<!--#ENDIF-->

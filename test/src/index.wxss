@@ -1,0 +1,20 @@
+page {
+
+}
+
+/*#IF WX*/
+.wx {
+
+}
+
+/*#ELSE IF ALI*/
+.my {
+
+}
+
+/*#ELSE*/
+.other {
+
+}
+
+/*#ENDIF*/

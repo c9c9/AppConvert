@@ -1,0 +1,23 @@
+{
+  "sourcePath": "src",
+  "buildPath": "builds",
+  "ignore": null,
+  "builds": [
+    {
+      "name": "wx",
+      "define": "WX"
+    },
+    {
+      "name": "my",
+      "define": "MY"
+    },
+    {
+      "name": "swan",
+      "define": "SWAN"
+    },
+    {
+      "name": "qq",
+      "define": "QQ"
+    }
+  ]
+}
